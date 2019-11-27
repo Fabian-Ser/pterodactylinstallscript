@@ -3,7 +3,7 @@
 #wget https://raw.githubusercontent.com/Fabian-Ser/pterodactylinstallscript/master/setup?token=AGCT7DG2DFPCIHZJUEX7TFS532I7Q && bash pterodactylinstallscript
 apt update
 sudo apt-get install nano
-service apache2stop
+service apache2 stop
 echo "* Apache2 is gestopt en apt update is uitgevoerd! De installatie gaat beginnen!"
 echo 'Voer je gewenste panel link (FQDN) in, letop: er moet al een A record aangemaakt zijn!'
 read fqdn
