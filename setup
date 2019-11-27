@@ -1,0 +1,40 @@
+#!/bin/bash
+#Download this script by running
+#wget https://bit.ly/2X6sZVU && bash pterodactylinstallscript
+apt update
+sudo apt-get install nano
+service apache2stop
+echo "* Apache2 is gestopt en apt update is uitgevoerd! De installatie gaat beginnen!"
+echo 'Voer je gewenste panel link (FQDN) in, letop: er moet al een A record aangemaakt zijn!'
+read fqdn
+apt install curl vim -y
+apt update
+apt upgrade -y
+bash <(curl -s https://raw.githubusercontent.com/VilhelmPrytz/pterodactyl-installer/master/install-panel.sh)
+bash <(curl -s https://raw.githubusercontent.com/VilhelmPrytz/pterodactyl-installer/master/install-daemon.sh)
+apt update
+apt upgrade -y
+apt install certbot
+echo 'Certbot is aan het draaien'
+echo 'Selecteer: Create temporary website to configure'
+ufw allow 443
+ufw allow 80
+ufw allow 22
+ufw allow 2022
+ufw allow 8080
+ufw allow 25565
+echo y | ufw delete 7
+echo y | ufw delete 7
+echo y | ufw delete 7
+echo y | ufw delete 7
+echo y | ufw delete 7
+echo y | ufw delete 7
+ufw enable
+service nginx stop
+certbot certonly -d $fqdn
+service nginx start
+systemctl restart nginx
+echo Installatie bijna voltooid!
+echo Om de installatie te voltooien moet de daemon nog worden ingesteld, dit moet via het paneel: $fqdn
+echo Zodra de daemon is, update je de core.json via het volgende commando: nano /srv/daemon/config/core.json
+echo Hierna sla je het bestand op met CTRL+X en dan druk je op Y
