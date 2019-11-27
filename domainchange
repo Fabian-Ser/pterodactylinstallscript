@@ -1,7 +1,7 @@
 #!/bin/bash
 #Can be grabbed from
-#wget https://bit.ly/2X6sZVU && bash 2X6sZVU
-echo 'Voer je gewenste panel link (FQDN) in, letop: er moet al een A record aangemaakt zijn! (ZONDER HTTPS/HTTP INVULLEN)'
+#wget https://raw.githubusercontent.com/Fabian-Ser/pterodactylinstallscript/master/domainchange?token=AGCT7DAEJJAAQ2JNW7S5PAC532LEK && bash 2X6sZVU
+echo 'Voer een nieuwe gewenste panel link (FQDN) in, letop: er moet al een A record aangemaakt zijn! (ZONDER HTTPS/HTTP INVULLEN)'
 read fqdn
 rm -f /etc/nginx/sites-available/pterodactyl.conf
 rm -f /etc/nginx/sites-enabled/pterodactyl.conf
