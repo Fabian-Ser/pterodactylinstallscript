@@ -72,7 +72,7 @@ mysql -u root -p -e "CREATE DATABASE panel;"
 mysql -u root -p -e "GRANT ALL PRIVILEGES ON panel.* TO 'pterodactyl'@'127.0.0.1' WITH GRANT OPTION;"
 mysql -u root -p -e "FLUSH PRIVILEGES;"
 echo "[x] Editing .ENV"
-curl -o /var/www/pterodactyl/.env https://raw.githubusercontent.com/Fabian-Ser/pterodactylinstallscript/master/.env
+cp .env.example .env
 composer install --no-dev --optimize-autoloader
 sed -i -e "s|APP_TIMEZONE=America/New_York|APP_TIMEZONE=Europe/Amsterdam|g" /var/www/pterodactyl/.env
 sed -i -e "s|DB_PASSWORD=|DB_PASSWORD=${MYSQL_PASSWORD}|g" /var/www/pterodactyl/.env
