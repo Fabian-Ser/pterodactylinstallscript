@@ -8,7 +8,7 @@ rm -f /etc/nginx/sites-enabled/pterodactyl.conf
 systemctl restart nginx
 service nginx stop
 certbot certonly -d $fqdn
-curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/VilhelmPrytz/pterodactyl-installer/master/configs/nginx_ssl.conf
+curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/Fabian-Ser/pterodactylinstallscript/master/nginxssl.conf
 sed -i -e "s/<domain>/${fqdn}/g" /etc/nginx/sites-available/pterodactyl.conf
 sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
 service nginx start
