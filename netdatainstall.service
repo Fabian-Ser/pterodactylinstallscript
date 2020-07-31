@@ -1,0 +1,14 @@
+[Unit]
+Description=NetdataInstall
+
+[Service]
+User=root
+#Group=some_group
+WorkingDirectory=/
+LimitNOFILE=4096
+ExecStart=/bin/bash /kickstart.sh --non-interactive --allow-duplicate-install --dont-wait
+Restart=on-failure
+StartLimitInterval=600
+
+[Install]
+WantedBy=multi-user.target
