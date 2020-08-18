@@ -11,7 +11,7 @@
       ]
     },
     "env": {
-      "FIVEM_LICENSE": "-",
+      "FIVEM_LICENSE": "FIVEMLICENTIE",
       "STEAM_WEBAPIKEY": "none",
       "MAX_PLAYERS": "32",
       "SERVER_HOSTNAME": "My new FXServer!",
