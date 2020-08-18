@@ -1,0 +1,46 @@
+{
+  "uuid": "01c58df6-5365-439e-b2e4-4292a23d0067",
+  "build": {
+    "default": {
+      "ip": "DOMAINHERE",
+      "port": 30120
+    },
+    "ports": {
+      "DOMAINHERE": [
+        30120
+      ]
+    },
+    "env": {
+      "FIVEM_LICENSE": "-",
+      "STEAM_WEBAPIKEY": "none",
+      "MAX_PLAYERS": "32",
+      "SERVER_HOSTNAME": "My new FXServer!",
+      "FIVEM_VERSION": "latest",
+      "DOWNLOAD_URL": "",
+      "STARTUP": "$(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path \"$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/\" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ +set sv_licenseKey {{FIVEM_LICENSE}} +set steam_webApiKey {{STEAM_WEBAPIKEY}} +set sv_maxplayers {{MAX_PLAYERS}} +exec server.cfg",
+      "P_SERVER_LOCATION": "Made",
+      "P_SERVER_UUID": "01c58df6-5365-439e-b2e4-4292a23d0067",
+      "SERVER_MEMORY": 1000,
+      "SERVER_IP": "DOMAINHERE",
+      "SERVER_PORT": 30120
+    },
+    "oom_disabled": false,
+    "memory": 1000,
+    "swap": 0,
+    "io": 500,
+    "cpu": 0,
+    "disk": 10000,
+    "image": "quay.io/parkervcp/pterodactyl-images:base_alpine"
+  },
+  "service": {
+    "egg": "Nwm9TZeAkFv2d24hbWDcuGVh6xQMyVvV47Hx",
+    "pack": null,
+    "skip_scripts": false
+  },
+  "rebuild": false,
+  "suspended": 0,
+  "container": {
+    "id": "01c58df6-5365-439e-b2e4-4292a23d0067",
+    "image": "quay.io/parkervcp/pterodactyl-images:base_alpine"
+  }
+}
