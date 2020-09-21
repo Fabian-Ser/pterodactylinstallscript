@@ -7,7 +7,7 @@ module.exports = {
     },
     run: async(bot, message, args) => {
     
-        var starthere = null
+        //hier
         
     }
 }
