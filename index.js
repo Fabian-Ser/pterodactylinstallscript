@@ -25,7 +25,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on('ready', () => {
-    console.log(`[LOGS] ${bot.user.username} is geactiveerd`);
+    console.log(`De bot is online!`);
 });
 
 
